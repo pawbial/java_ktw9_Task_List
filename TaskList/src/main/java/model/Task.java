@@ -1,13 +1,17 @@
 package model;
 
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Entity
 public class Task {
@@ -53,5 +57,25 @@ public class Task {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Map <Integer, String> getOptionsMap () {
+
+        Map <Integer,String> statusOptions = new HashMap<>();
+        statusOptions.put(1,"Option 1");
+        statusOptions.put(2,"Option 2");
+        statusOptions.put(3,"Option 3");
+        statusOptions.put(4,"Option 4");
+        return statusOptions;
+    }
+
+    public String getStatusAsOption () {
+        Map<Integer, String> optionsMap = getOptionsMap();
+
+        String optionStatus = optionsMap.entrySet().stream().map(option -> "<option value=\"" + option.getKey() + "\">" + option.getValue() + "</option>")
+                .collect(Collectors.joining());
+
+        return optionStatus;
+
     }
 }
