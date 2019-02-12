@@ -22,6 +22,10 @@ public class Task {
     private String status;
 
 
+    public Task () {
+
+    }
+
     @Id
     @GeneratedValue
     public Long getId() {
