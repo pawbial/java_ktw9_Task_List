@@ -15,7 +15,7 @@ public class TaskService {
     private TaskDAO taskDAO;
 
 
-    void saveTask (TaskDTO taskDTO) {
+    public void saveTask (TaskDTO taskDTO) {
         Task task = new Task();
 
         task.setId(taskDTO.getId());

@@ -27,7 +27,8 @@
             <option><%= new Task().getStatusAsOption()%></option>
         </select>
     <br>
-    <textarea rows="4" cols="50" name="comment" form="taskForm">
+    <label for="content"></label>
+    <textarea rows="4" cols="50" name="content" id="content" form="taskForm">
 Task content here ...</textarea>
     <br>
     <input type="submit" value="submit">

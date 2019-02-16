@@ -66,10 +66,10 @@ public class Task {
     public Map <Integer, String> getOptionsMap () {
 
         Map <Integer,String> statusOptions = new HashMap<>();
-        statusOptions.put(1,"Option 1");
-        statusOptions.put(2,"Option 2");
-        statusOptions.put(3,"Option 3");
-        statusOptions.put(4,"Option 4");
+        statusOptions.put(1,"New");
+        statusOptions.put(2,"Processing");
+        statusOptions.put(3,"Old");
+
         return statusOptions;
     }
 
@@ -80,6 +80,12 @@ public class Task {
                 .collect(Collectors.joining());
 
         return optionStatus;
+
+    }
+
+    @Override
+    public String toString() {
+        return '{' + " content: " + content + ", date: " + date + ", status: " +status + '}';
 
     }
 }
